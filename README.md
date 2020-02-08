@@ -40,6 +40,7 @@ Technologies used in the development of the project:
 - [yup](https://github.com/jquense/yup)
 - [Docker](https://www.docker.com/)
 - [Postgres](https://www.postgresql.org/)
+- [multer](https://github.com/expressjs/multer)
 
 ## 💻 Projeto
 
