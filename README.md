@@ -41,10 +41,11 @@ Technologies used in the development of the project:
 - [Docker](https://www.docker.com/)
 - [Postgres](https://www.postgresql.org/)
 - [multer](https://github.com/expressjs/multer)
+- [date-fns](https://date-fns.org/)
 
 ## 💻 Projeto
 
-Go barber é um projeto de gerenciamento de agendamento de barbearia. As aplicações front-end (web e mobile) consomem esta mesma API. <!--Ele estará disponível para duas plataformas: web e mobile. A aplicação mobile será usada pelos clientes, onde o cliente pode selecionar o prestador de serviço e data para agendar o serviço. Já a parte web é usada pelo prestador de serviço onde ele pode visualizar quais os agendamentos dos dias da semana. -->
+GoBarber é um projeto de gerenciamento de agendamento de barbearia. As aplicações front-end (web e mobile) consomem esta mesma API. Ele estará disponível para duas plataformas: web e mobile. A aplicação mobile será usada pelos clientes, onde o cliente pode selecionar o prestador de serviço e data para agendar o serviço. Já a parte web será usada pelo prestador de serviço onde ele poderá visualizar quais os agendamentos dos dias da semana.
 
 ## 🤔 Como contribuir
 
