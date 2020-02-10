@@ -1,4 +1,4 @@
-import { format, isBefore, parseISO, startOfHour } from 'date-fns';
+import { format, isBefore, parseISO, startOfHour, subHours } from 'date-fns';
 import pt from 'date-fns/locale/pt-BR';
 import * as Yup from 'yup';
 import Appointment from '../models/Appointment';
@@ -56,7 +56,7 @@ class AppointmentController {
     if (!isProvider) {
       return res
         .status(401)
-        .json({ error: 'You only can to mark appointment with a provider' });
+        .json({ error: 'You can only to mark appointment with a provider' });
     }
 
     if (req.userId === provider_id) {
@@ -105,6 +105,30 @@ class AppointmentController {
       content: `Novo agendamento de ${user.name} para dia ${formatedDate}`,
       user: provider_id,
     });
+
+    return res.json(appointment);
+  }
+
+  async delete(req, res) {
+    const appointment = await Appointment.findByPk(req.params.id);
+
+    if (appointment.user_id !== req.userId) {
+      return res.status(401).json({
+        error: 'You can only to cancel appointment yourself',
+      });
+    }
+
+    const dateWithSub = subHours(appointment.date, 2);
+
+    if (isBefore(dateWithSub, new Date())) {
+      return res.status(401).json({
+        error: 'You can only to cancel appointments with 1 hour in advance',
+      });
+    }
+
+    appointment.canceled_at = new Date();
+
+    await appointment.save();
 
     return res.json(appointment);
   }
