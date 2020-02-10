@@ -42,6 +42,7 @@ Technologies used in the development of the project:
 - [Postgres](https://www.postgresql.org/)
 - [multer](https://github.com/expressjs/multer)
 - [date-fns](https://date-fns.org/)
+- [MongoDB](https://www.mongodb.com/)
 
 ## 💻 Projeto
 
