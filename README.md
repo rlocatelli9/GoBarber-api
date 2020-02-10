@@ -43,6 +43,7 @@ Technologies used in the development of the project:
 - [multer](https://github.com/expressjs/multer)
 - [date-fns](https://date-fns.org/)
 - [MongoDB](https://www.mongodb.com/)
+- [mongoose](https://mongoosejs.com/)
 
 ## 💻 Projeto
 
