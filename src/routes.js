@@ -18,6 +18,7 @@ routes.post('/sessions', SessionController.store);
 
 routes.use(authMiddleware);
 routes.put('/users', UserController.update);
+routes.put('/notifications/:id', NotificationController.update);
 
 routes.get('/providers', ProviderController.index);
 routes.get('/appointments', AppointmentController.index);
