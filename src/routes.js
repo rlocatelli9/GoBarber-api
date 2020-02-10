@@ -2,6 +2,7 @@ import { Router } from 'express';
 import multer from 'multer';
 import AppointmentController from './app/controllers/AppointmentController';
 import FileController from './app/controllers/FileController';
+import NotificationController from './app/controllers/NotificationController';
 import ProviderController from './app/controllers/ProviderController';
 import ScheduleController from './app/controllers/ScheduleController';
 import SessionController from './app/controllers/SessionController';
@@ -21,6 +22,7 @@ routes.put('/users', UserController.update);
 routes.get('/providers', ProviderController.index);
 routes.get('/appointments', AppointmentController.index);
 routes.get('/schedules', ScheduleController.index);
+routes.get('/notifications', NotificationController.index);
 
 routes.post('/appointments', AppointmentController.store);
 routes.post('/files', upload.single('file'), FileController.store);
