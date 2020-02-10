@@ -59,6 +59,12 @@ class AppointmentController {
         .json({ error: 'You only can to mark appointment with a provider' });
     }
 
+    if (req.userId === provider_id) {
+      return res
+        .status(401)
+        .json({ error: 'Do you can not to mark appointment with yourself' });
+    }
+
     const hourStart = startOfHour(parseISO(date));
 
     if (isBefore(hourStart, new Date())) {
