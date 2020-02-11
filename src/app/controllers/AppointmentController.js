@@ -1,6 +1,7 @@
 import { format, isBefore, parseISO, startOfHour, subHours } from 'date-fns';
 import pt from 'date-fns/locale/pt-BR';
 import * as Yup from 'yup';
+import Mail from '../../lib/Mail';
 import Appointment from '../models/Appointment';
 import File from '../models/File';
 import User from '../models/User';
@@ -110,7 +111,9 @@ class AppointmentController {
   }
 
   async delete(req, res) {
-    const appointment = await Appointment.findByPk(req.params.id);
+    const appointment = await Appointment.findByPk(req.params.id, {
+      include: [{ model: User, as: 'provider', attributes: ['name', 'email'] }],
+    });
 
     if (appointment.user_id !== req.userId) {
       return res.status(401).json({
@@ -122,13 +125,20 @@ class AppointmentController {
 
     if (isBefore(dateWithSub, new Date())) {
       return res.status(401).json({
-        error: 'You can only to cancel appointments with 1 hour in advance',
+        error: 'You can only to cancel appointments with 2 hours in advance',
       });
     }
 
     appointment.canceled_at = new Date();
 
     await appointment.save();
+
+    await Mail.sendMail({
+      to: `${appointment.provider.name} <${appointment.provider.email}>`, // list of receivers
+      subject: 'Novo Cancelamento', // Subject line
+      text: `Hello ${appointment.provider.name}`, // plain text body
+      html: '<b>Alguém cancelou um compromisso com você!</b>', // html body
+    });
 
     return res.json(appointment);
   }
