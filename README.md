@@ -44,6 +44,8 @@ Technologies used in the development of the project:
 - [date-fns](https://date-fns.org/)
 - [MongoDB](https://www.mongodb.com/)
 - [mongoose](https://mongoosejs.com/)
+- [nodemailer](https://nodemailer.com/about/)
+- [Handlebars](https://handlebarsjs.com/)
 
 ## 💻 Projeto
 
