@@ -46,6 +46,8 @@ Technologies used in the development of the project:
 - [mongoose](https://mongoosejs.com/)
 - [nodemailer](https://nodemailer.com/about/)
 - [Handlebars](https://handlebarsjs.com/)
+- [Bee-Queue](https://github.com/bee-queue/bee-queue)
+- [Redis](https://redis.io/)
 
 ## 💻 Projeto
 
