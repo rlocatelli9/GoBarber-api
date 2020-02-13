@@ -32,22 +32,13 @@
 
 Technologies used in the development of the project:
 
-- [Node.js](https://nodejs.org/en/)
-- [bcryptjs](https://www.npmjs.com/package/bcryptjs)
-- [Express](https://expressjs.com/)
-- [JsonWebtoken](https://jwt.io/)
-- [Sequelize](https://sequelize.org/)
-- [yup](https://github.com/jquense/yup)
-- [Docker](https://www.docker.com/)
-- [Postgres](https://www.postgresql.org/)
-- [multer](https://github.com/expressjs/multer)
-- [date-fns](https://date-fns.org/)
-- [MongoDB](https://www.mongodb.com/)
-- [mongoose](https://mongoosejs.com/)
-- [nodemailer](https://nodemailer.com/about/)
-- [Handlebars](https://handlebarsjs.com/)
-- [Bee-Queue](https://github.com/bee-queue/bee-queue)
-- [Redis](https://redis.io/)
+[Node.js](https://nodejs.org/en/) | [bcryptjs](https://www.npmjs.com/package/bcryptjs) | [Express](https://expressjs.com/) | [JsonWebtoken](https://jwt.io/)
+
+[Sequelize](https://sequelize.org/) | [yup](https://github.com/jquense/yup) | [Docker](https://www.docker.com/) | [Postgres](https://www.postgresql.org/)
+
+[multer](https://github.com/expressjs/multer) | [date-fns](https://date-fns.org/) | [MongoDB](https://www.mongodb.com/) | [mongoose](https://mongoosejs.com/)
+
+[nodemailer](https://nodemailer.com/about/) | [Handlebars](https://handlebarsjs.com/) | [Bee-Queue](https://github.com/bee-queue/bee-queue) | [Redis](https://redis.io/)
 
 ## 💻 Projeto
 
