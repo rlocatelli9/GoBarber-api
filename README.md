@@ -40,6 +40,8 @@ Technologies used in the development of the project:
 
 [nodemailer](https://nodemailer.com/about/) | [Handlebars](https://handlebarsjs.com/) | [Bee-Queue](https://github.com/bee-queue/bee-queue) | [Redis](https://redis.io/)
 
+[Sentry](https://sentry.io/) | [express-async-errors](npmjs.com/package/express-async-errors) | [Youch](https://www.npmjs.com/package/youch)
+
 ## 💻 Projeto
 
 GoBarber é um projeto de gerenciamento de agendamento de barbearia. As aplicações front-end (web e mobile) consomem esta mesma API. Ele estará disponível para duas plataformas: web e mobile. A aplicação mobile será usada pelos clientes, onde o cliente pode selecionar o prestador de serviço e data para agendar o serviço. Já a parte web será usada pelo prestador de serviço onde ele poderá visualizar quais os agendamentos dos dias da semana.
