@@ -8,7 +8,7 @@ class Appointment {
   @Column()
   provider: string;
 
-  @Column('time with time zone')
+  @Column('timestamp with time zone') // 'timestamp', {default: (): string => 'LOCALTIMESTAMP' }
   date: Date;
 }
 

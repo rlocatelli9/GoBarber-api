@@ -1,5 +1,4 @@
 import { startOfHour } from 'date-fns';
-import { application } from 'express';
 
 import { getCustomRepository } from 'typeorm';
 
