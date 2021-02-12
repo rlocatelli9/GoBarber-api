@@ -2,6 +2,8 @@ import { Request, Response, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
 import authConfig from '../config/authConfig';
 
+import AppError from '../errors/AppError';
+
 interface RequestToken {
   iat: number;
   exp: number;
@@ -16,7 +18,7 @@ export default function ensureAuthenticated(
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
-    throw new Error('É necessário o token de autorização.');
+    throw new AppError('É necessário o token de autorização.', 401);
   }
 
   const [, token] = authHeader.split(' ');
@@ -32,6 +34,6 @@ export default function ensureAuthenticated(
 
     return next();
   } catch (error) {
-    throw new Error('Token inválido.');
+    throw new AppError('Token inválido.', 401);
   }
 }

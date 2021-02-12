@@ -5,6 +5,8 @@ import authConfig from '../config/authConfig';
 
 import User from '../models/User';
 
+import AppError from '../errors/AppError';
+
 interface Request {
   email: string;
   password: string;
@@ -25,13 +27,13 @@ class AuthenticateUserService {
     const user = await usersRepository.findOne({ where: { email } });
 
     if (!user) {
-      throw new Error('A combinação de E-mail/Senha está incorreta.');
+      throw new AppError('A combinação de E-mail/Senha está incorreta.', 401);
     }
 
     const passwordMatched = await compare(password, user.password);
 
     if (!passwordMatched) {
-      throw new Error('A combinação de E-mail/Senha está incorreta.');
+      throw new AppError('A combinação de E-mail/Senha está incorreta.', 401);
     }
 
     const { secret, expiresIn } = authConfig.jwt;

@@ -5,6 +5,8 @@ import { getCustomRepository } from 'typeorm';
 import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
+import AppError from '../errors/AppError';
+
 interface Request {
   date: Date;
   providerId: string;
@@ -21,7 +23,10 @@ class CreateAppointmentService {
     );
 
     if (findAppointmentInSameDate) {
-      throw Error('Esse horário ja está agendado epara outro cliente');
+      throw new AppError(
+        'Esse horário ja está agendado epara outro cliente',
+        401,
+      );
     }
 
     const appointment = appointmentsRepository.create({

@@ -7,6 +7,7 @@ export default {
       id: user.id,
       name: user.name,
       email: user.email,
+      evatar: user.avatar,
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,
       cancelledAt: user.cancelledAt,
