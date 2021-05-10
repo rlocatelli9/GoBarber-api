@@ -1,4 +1,4 @@
-import User from '../models/User';
+import User from '@modules/users/infra/typeorm/entities/User';
 
 export default {
   render(user: User): Record<string, unknown> {
