@@ -34,10 +34,20 @@ class SendForgotPasswordEmailService {
       userExists.id,
     );
 
-    await this.mailProvider.sendMail(
-      email,
-      `mensagem para recuperação de senha: ${token}`,
-    );
+    await this.mailProvider.sendMail({
+      to: {
+        name: userExists.name,
+        email: userExists.email,
+      },
+      subject: '[GoBarber] Recuperação de senha',
+      templateData: {
+        template: 'Olá, {{name}}: {{token}}',
+        variables: {
+          name: userExists.name,
+          token,
+        },
+      },
+    });
   }
 }
 
