@@ -62,6 +62,6 @@ describe('SendForgotPasswordEmail', () => {
       email: 'user@example.com',
     });
 
-    await expect(generateTokenFunction).toHaveBeenCalledWith(user.id);
+    expect(generateTokenFunction).toHaveBeenCalledWith(user.id);
   });
 });
