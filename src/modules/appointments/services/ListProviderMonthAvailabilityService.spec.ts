@@ -16,7 +16,37 @@ describe('ListProvidersService', () => {
 
   it('should not be able to list the month availability from providers', async () => {
     await fakeAppointmentsRepository.create({
-      date: new Date(2020, 3, 16, 15, 0, 0),
+      date: new Date(2020, 4, 16, 8, 0, 0),
+      providerId: '4234234k23423',
+    });
+
+    await fakeAppointmentsRepository.create({
+      date: new Date(2020, 4, 16, 9, 0, 0),
+      providerId: '4234234k23423',
+    });
+
+    await fakeAppointmentsRepository.create({
+      date: new Date(2020, 4, 16, 10, 0, 0),
+      providerId: '4234234k23423',
+    });
+
+    await fakeAppointmentsRepository.create({
+      date: new Date(2020, 4, 16, 11, 0, 0),
+      providerId: '4234234k23423',
+    });
+
+    await fakeAppointmentsRepository.create({
+      date: new Date(2020, 4, 16, 12, 0, 0),
+      providerId: '4234234k23423',
+    });
+
+    await fakeAppointmentsRepository.create({
+      date: new Date(2020, 4, 16, 13, 0, 0),
+      providerId: '4234234k23423',
+    });
+
+    await fakeAppointmentsRepository.create({
+      date: new Date(2020, 4, 16, 14, 0, 0),
       providerId: '4234234k23423',
     });
 
@@ -31,7 +61,12 @@ describe('ListProvidersService', () => {
     });
 
     await fakeAppointmentsRepository.create({
-      date: new Date(2020, 4, 17, 17, 0, 0),
+      date: new Date(2020, 4, 16, 17, 0, 0),
+      providerId: '4234234k23423',
+    });
+
+    await fakeAppointmentsRepository.create({
+      date: new Date(2020, 4, 17, 10, 0, 0),
       providerId: '4234234k23423',
     });
 
@@ -45,7 +80,7 @@ describe('ListProvidersService', () => {
       expect.arrayContaining([
         { day: 15, available: true },
         { day: 16, available: false },
-        { day: 17, available: false },
+        { day: 17, available: true },
         { day: 18, available: true },
       ]),
     );
