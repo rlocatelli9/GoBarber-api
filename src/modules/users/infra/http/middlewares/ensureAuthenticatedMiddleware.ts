@@ -4,7 +4,7 @@ import authConfig from '@config/authConfig';
 
 import AppError from '@shared/errors/AppError';
 
-interface RequestToken {
+interface IRequestToken {
   iat: number;
   exp: number;
   sub: string;
@@ -26,7 +26,7 @@ export default function ensureAuthenticated(
   try {
     const decodedToken = verify(token, authConfig.jwt.secret);
 
-    const { sub } = decodedToken as RequestToken;
+    const { sub } = decodedToken as IRequestToken;
 
     request.user = {
       id: sub,
