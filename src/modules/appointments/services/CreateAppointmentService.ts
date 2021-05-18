@@ -45,7 +45,7 @@ class CreateAppointmentService {
 
     if (findAppointmentInSameDate) {
       throw new AppError(
-        'Esse horário ja está agendado epara outro cliente',
+        'This hour already are scheduled for another client',
         401,
       );
     }
