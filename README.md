@@ -60,3 +60,5 @@
   - O usuário não pode agendar em um horário que já passou.
   - O usuário não pode agendar um serviço consigo mesmo.
 
+
+Ps: Lembre-se de criar o arquivo `ormconfig.json` com os dados de conexão do banco para desenvolvimento local
