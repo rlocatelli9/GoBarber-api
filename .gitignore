@@ -2,8 +2,10 @@ node_modules
 *_volume/
 .idea/
 .vscode/
+.env
 build/
 temp/*
 !temp/.gitkeep
 tmp/
 /coverage/
+ormconfig.json
