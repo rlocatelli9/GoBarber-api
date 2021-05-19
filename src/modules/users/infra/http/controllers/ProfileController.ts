@@ -3,7 +3,7 @@ import { container } from 'tsyringe';
 
 import UpdateProfileService from '@modules/users/services/UpdateProfileService';
 import ShowProfileService from '@modules/users/services/ShowProfileService';
-import userWithoutPasswordViews from '@modules/users/infra/views/userWithoutPasswordViews';
+import { classToClass } from 'class-transformer';
 
 export default class ProfileController {
   public async show(request: Request, response: Response): Promise<Response> {
@@ -13,9 +13,7 @@ export default class ProfileController {
 
     const user = await showProfileUser.execute({ userId });
 
-    const newUser = userWithoutPasswordViews.render(user);
-
-    return response.json(newUser);
+    return response.json(classToClass(user));
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
@@ -31,8 +29,6 @@ export default class ProfileController {
       oldPassword,
     });
 
-    const newUser = userWithoutPasswordViews.render(user);
-
-    return response.json(newUser);
+    return response.json(classToClass(user));
   }
 }
