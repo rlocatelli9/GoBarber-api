@@ -28,8 +28,6 @@ class ListProvidersService {
         exceptUserId: userId,
       });
 
-      console.log('query feita');
-
       await this.cacheProvider.save(`providers-list:${userId}`, users);
     }
 
