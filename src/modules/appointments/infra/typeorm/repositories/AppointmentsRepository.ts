@@ -18,9 +18,12 @@ class AppointmentsRepository implements IAppointmentsRepository {
    * Método responsável por pesquisar se existe algum agendamento
    * com base na data passada.
    */
-  public async findByDate(date: Date): Promise<Appointment | undefined> {
+  public async findByDate(
+    date: Date,
+    providerId: string,
+  ): Promise<Appointment | undefined> {
     const findAppointment = await this.ormRepository.findOne({
-      where: { date },
+      where: { date, providerId },
     });
 
     return findAppointment;
